@@ -12,7 +12,7 @@ class Trip extends Component {
 			<div
 				onClick={this.toggleSelected} 
 				className={classNames} 
-				style={{ left: `${this.props.trip.startTime}px`, width: `${duration}px` }}
+				style={{ left: `${this.props.trip.startTime + 75}px`, width: `${duration}px` }}
 			>
 				{this.props.trip.id}
 			</div>

@@ -39,7 +39,7 @@ class App extends Component {
     var buses = this.state.buses
     var busIdsWithTrips = this.state.trips.map(trip => trip.bus_id)
     var maxBusId = Math.max(...busIdsWithTrips)
-    buses = [...buses, {id: maxBusId + 1, Name: "New Bus"}]
+    buses = [...buses, {id: maxBusId + 1, name: "New Bus"}]
     this.setState({buses: buses})
   }
 

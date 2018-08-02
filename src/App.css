@@ -30,6 +30,19 @@
   border-bottom: 1px solid gray;
   position: relative;
   height: 35px;
+  margin: 5px;
+}
+
+.bus:nth-child(odd) {
+  background: #c8c8c852;
+}
+
+.bus-label {
+  width: 75px;
+  border-right: 1px solid gray;
+  position: absolute;
+  margin: 5px;
+  height: 22px;
 }
 
 .trip {
