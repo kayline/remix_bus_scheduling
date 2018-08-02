@@ -23,6 +23,7 @@ class App extends Component {
       var tripstoUpdate = this.state.trips
       var selectedTrip = this.getSelectedTrip(tripstoUpdate)
       var conflict = this.checkforTripConflict(busId, selectedTrip)
+      console.log("Conflict:", conflict)
 
       if(!conflict) {
         var index = tripstoUpdate.indexOf(selectedTrip)
@@ -36,12 +37,31 @@ class App extends Component {
     return trips.find(trip => trip.id === this.state.selectedTripId)
   }
 
-   getTripsForBus(busId) {
+  getTripsForBus(busId) {
     return this.state.trips.filter((trip) => trip.bus_id === busId)
   }
 
-  checkforTripConflict(busId, trip) {
-    return false
+  checkforTripConflict(busId, selectedTrip) {
+    var conflict = false
+    var trips = this.getTripsForBus(busId)
+
+    trips.forEach(busTrip => {
+      if(this.tripsConflict(busTrip, selectedTrip)) {
+        conflict = true
+      } 
+    })
+    return conflict
+  }
+
+  tripsConflict(trip1, trip2) {
+    var startOverlaps = trip1.startTime < trip2.startTime && trip1.endTime >= trip2.startTime
+    var endOverlaps = trip2.startTime < trip1.startTime && trip2.endTime >= trip1.startTime
+
+    if(startOverlaps || endOverlaps) {
+      return true
+    } else {
+      return false
+    } 
   }
 
   render() {

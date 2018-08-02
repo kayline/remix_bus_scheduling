@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 class Trip extends Component {
-	constructor(props) {
-		super(props)
-	}
-
 	toggleSelected = () => {
 		this.props.selectTrip(this.props.trip.id)
 	}
