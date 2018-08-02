@@ -22,14 +22,12 @@ class App extends Component {
         <p className="App-intro">
           Assign trips to existing buses, or create a new bus to handle a trip
         </p>
-        <h2>Trips</h2>
-        {this.state.trips.map(trip => (
-          <div key={trip.id}>{trip.id}</div>
-          ))
-        }
         <h2>Buses</h2>
         {this.state.buses.map(bus => (
-          <div key={bus.id}>{bus.id}</div>
+          <div key={bus.id}>
+            <div>{bus.name}</div>
+            <div>Trips: {bus.trip_ids}</div>
+          </div>
           ))
         }
       </div>
