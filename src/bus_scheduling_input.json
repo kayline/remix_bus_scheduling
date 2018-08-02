@@ -13,15 +13,15 @@
 		],
 	"buses": 
 		[
-			{ "id": 1, "name": "Bus 1" },
-			{ "id": 2, "name": "Bus 2" },
-			{ "id": 3, "name": "Bus 3" },
-			{ "id": 4, "name": "Bus 4" },
-			{ "id": 5, "name": "Bus 5" },
-			{ "id": 6, "name": "Bus 6" },
-			{ "id": 7, "name": "Bus 7" },
-			{ "id": 8, "name": "Bus 8" },
-			{ "id": 9, "name": "Bus 9" }
+			{ "id": 1 },
+			{ "id": 2 },
+			{ "id": 3 },
+			{ "id": 4 },
+			{ "id": 5 },
+			{ "id": 6 },
+			{ "id": 7 },
+			{ "id": 8 },
+			{ "id": 9 }
 		]
 }
 
