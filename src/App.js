@@ -110,6 +110,7 @@ class App extends Component {
             />
             ))
           }
+          <p className="attribution">School Bus by Alina Oleynik from the Noun Project</p>
         </div>
       </div>
     );
