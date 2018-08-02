@@ -15,6 +15,7 @@ class App extends Component {
   }
 
   selectTrip = (tripId) => {
+    this.addEmptyBus()
     this.setState({selectedTripId: tripId})
   }
 
@@ -29,8 +30,30 @@ class App extends Component {
         var index = tripstoUpdate.indexOf(selectedTrip)
         tripstoUpdate[index].bus_id = busId
         this.setState({trips: tripstoUpdate, selectedTripId: null})
+        this.pruneEmptyBuses()
       }
     }
+  }
+
+  addEmptyBus() {
+    var buses = this.state.buses
+    var busIdsWithTrips = this.state.trips.map(trip => trip.bus_id)
+    var maxBusId = Math.max(...busIdsWithTrips)
+    buses = [...buses, {id: maxBusId + 1, Name: "New Bus"}]
+    this.setState({buses: buses})
+  }
+
+  pruneEmptyBuses() {
+    var oldBuses = this.state.buses
+    var prunedBuses = []
+
+    oldBuses.forEach(bus => {
+      var trips = this.getTripsForBus(bus.id)
+      if(trips.length > 0) {
+        prunedBuses = [...prunedBuses, bus]
+      }
+    })
+    this.setState({buses: prunedBuses})
   }
 
   getSelectedTrip(trips) {
