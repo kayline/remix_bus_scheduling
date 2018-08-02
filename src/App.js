@@ -18,8 +18,30 @@ class App extends Component {
     this.setState({selectedTripId: tripId})
   }
 
-  getTripsForBus(busId) {
+  addTripToBus = (busId) => {
+    if(this.state.selectedTripId != null) {
+      var tripstoUpdate = this.state.trips
+      var selectedTrip = this.getSelectedTrip(tripstoUpdate)
+      var conflict = this.checkforTripConflict(busId, selectedTrip)
+
+      if(!conflict) {
+        var index = tripstoUpdate.indexOf(selectedTrip)
+        tripstoUpdate[index].bus_id = busId
+        this.setState({trips: tripstoUpdate, selectedTripId: null})
+      }
+    }
+  }
+
+  getSelectedTrip(trips) {
+    return trips.find(trip => trip.id === this.state.selectedTripId)
+  }
+
+   getTripsForBus(busId) {
     return this.state.trips.filter((trip) => trip.bus_id === busId)
+  }
+
+  checkforTripConflict(busId, trip) {
+    return false
   }
 
   render() {
@@ -39,8 +61,9 @@ class App extends Component {
               key={bus.id}
               bus={bus}  
               trips={this.getTripsForBus(bus.id)}
-              selectedTripId={this.state.selectedTripId} 
-              selectTrip = {this.selectTrip}
+              selectedTripId={this.state.selectedTripId}
+              addTripToBus={this.addTripToBus}
+              selectTrip={this.selectTrip}
             />
             ))
           }
