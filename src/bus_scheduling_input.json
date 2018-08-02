@@ -1,15 +1,15 @@
 {
 	"trips": 
 		[
-	    { "id": 1, "startTime": 30, "endTime": 150, "bus_id": 1 },
-	    { "id": 2, "startTime": 180, "endTime": 300, "bus_id": 2 },
-	    { "id": 3, "startTime": 330, "endTime": 450, "bus_id": 3 },
-	    { "id": 4, "startTime": 40, "endTime": 130, "bus_id": 4 },
-	    { "id": 5, "startTime": 160, "endTime": 250, "bus_id": 5 },
-	    { "id": 6, "startTime": 280, "endTime": 370, "bus_id": 6 },
-	    { "id": 7, "startTime": 400, "endTime": 490, "bus_id": 7 },
-	    { "id": 8, "startTime": 80, "endTime": 240, "bus_id": 8 },
-	    { "id": 9, "startTime": 280, "endTime": 430, "bus_id": 9 }
+	    { "id": 1, "startTime": 30, "endTime": 150, "busId": 1 },
+	    { "id": 2, "startTime": 180, "endTime": 300, "busId": 2 },
+	    { "id": 3, "startTime": 330, "endTime": 450, "busId": 3 },
+	    { "id": 4, "startTime": 40, "endTime": 130, "busId": 4 },
+	    { "id": 5, "startTime": 160, "endTime": 250, "busId": 5 },
+	    { "id": 6, "startTime": 280, "endTime": 370, "busId": 6 },
+	    { "id": 7, "startTime": 400, "endTime": 490, "busId": 7 },
+	    { "id": 8, "startTime": 80, "endTime": 240, "busId": 8 },
+	    { "id": 9, "startTime": 280, "endTime": 430, "busId": 9 }
 		],
 	"buses": 
 		[

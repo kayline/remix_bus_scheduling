@@ -28,7 +28,7 @@ class App extends Component {
 
       if(!conflict) {
         var index = tripstoUpdate.indexOf(selectedTrip)
-        tripstoUpdate[index].bus_id = busId
+        tripstoUpdate[index].busId = busId
         this.setState({trips: tripstoUpdate, selectedTripId: null})
         this.pruneEmptyBuses()
       }
@@ -37,7 +37,7 @@ class App extends Component {
 
   addEmptyBus() {
     var buses = this.state.buses
-    var busIdsWithTrips = this.state.trips.map(trip => trip.bus_id)
+    var busIdsWithTrips = this.state.trips.map(trip => trip.busId)
     var maxBusId = Math.max(...busIdsWithTrips)
     buses = [...buses, {id: maxBusId + 1, name: "New Bus"}]
     this.setState({buses: buses})
@@ -61,7 +61,7 @@ class App extends Component {
   }
 
   getTripsForBus(busId) {
-    return this.state.trips.filter((trip) => trip.bus_id === busId)
+    return this.state.trips.filter((trip) => trip.busId === busId)
   }
 
   checkforTripConflict(busId, selectedTrip) {
