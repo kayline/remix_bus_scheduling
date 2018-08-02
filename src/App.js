@@ -28,7 +28,7 @@ class App extends Component {
         <p className="App-intro">
           Assign trips to existing buses, or create a new bus to handle a trip
         </p>
-        <h2>Buses</h2>
+        <h2>Bus Schedule</h2>
         <div className="schedule">
           {this.state.buses.map(bus => (
             <Bus bus={bus}  trips={this.getTripsForBus(bus.id)} key={bus.id}/>
