@@ -9,9 +9,13 @@ class App extends Component {
     super(props)
     this.state = {
       trips: fileData.trips,
-      buses: fileData.buses
+      buses: fileData.buses,
+      selectedTripId: null
     }
+  }
 
+  selectTrip = (tripId) => {
+    this.setState({selectedTripId: tripId})
   }
 
   getTripsForBus(busId) {
@@ -31,7 +35,13 @@ class App extends Component {
         <h2>Bus Schedule</h2>
         <div className="schedule">
           {this.state.buses.map(bus => (
-            <Bus bus={bus}  trips={this.getTripsForBus(bus.id)} key={bus.id}/>
+            <Bus
+              key={bus.id}
+              bus={bus}  
+              trips={this.getTripsForBus(bus.id)}
+              selectedTripId={this.state.selectedTripId} 
+              selectTrip = {this.selectTrip}
+            />
             ))
           }
         </div>

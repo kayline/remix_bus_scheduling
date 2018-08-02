@@ -6,7 +6,12 @@ class Bus extends Component {
 		return (
 			<div className="bus">
         {this.props.trips.map(trip => (
-        	<Trip trip={trip} key={trip.id}/>
+        	<Trip
+	        	key={trip.id} 
+	        	trip={trip} 
+	        	selected={this.props.selectedTripId === trip.id}
+	        	selectTrip={this.props.selectTrip}
+        	/>
       	))}
       </div>
 			)

@@ -34,3 +34,7 @@
   margin: 5px;
   width: 100px;
 }
+
+.trip.selected {
+  background-color: gray;
+}

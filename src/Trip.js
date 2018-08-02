@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 
 class Trip extends Component {
+	constructor(props) {
+		super(props)
+	}
+
+	toggleSelected = () => {
+		this.props.selectTrip(this.props.trip.id)
+	}
+
 	render() {
 		const duration = this.props.trip.endTime - this.props.trip.startTime
-		
+		const classNames = this.props.selected ? 'trip selected' : 'trip'
 		return(
-			<div 
-				className="trip" 
+			<div
+				onClick={this.toggleSelected} 
+				className={classNames} 
 				style={{ left: `${this.props.trip.startTime}px`, width: `${duration}px` }}
 			>
 				{this.props.trip.id}
