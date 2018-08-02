@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './bus_logo.svg';
 import './App.css';
+import Bus from './Bus.js'
 import fileData from './bus_scheduling_input.json'
 
 class App extends Component {
@@ -12,6 +13,11 @@ class App extends Component {
     }
 
   }
+
+  getTripsForBus(busId) {
+    return this.state.trips.filter((trip) => trip.bus_id === busId)
+  }
+
   render() {
     return (
       <div className="App">
@@ -23,13 +29,12 @@ class App extends Component {
           Assign trips to existing buses, or create a new bus to handle a trip
         </p>
         <h2>Buses</h2>
-        {this.state.buses.map(bus => (
-          <div key={bus.id}>
-            <div>{bus.name}</div>
-            <div>Trips: {bus.trip_ids}</div>
-          </div>
-          ))
-        }
+        <div className="schedule">
+          {this.state.buses.map(bus => (
+            <Bus bus={bus}  trips={this.getTripsForBus(bus.id)} key={bus.id}/>
+            ))
+          }
+        </div>
       </div>
     );
   }

@@ -1,27 +1,27 @@
 {
 	"trips": 
 		[
-	    { "id": 1, "startTime": 30, "endTime": 150 },
-	    { "id": 2, "startTime": 180, "endTime": 300 },
-	    { "id": 3, "startTime": 330, "endTime": 450 },
-	    { "id": 4, "startTime": 40, "endTime": 130 },
-	    { "id": 5, "startTime": 160, "endTime": 250 },
-	    { "id": 6, "startTime": 280, "endTime": 370 },
-	    { "id": 7, "startTime": 400, "endTime": 490 },
-	    { "id": 8, "startTime": 80, "endTime": 240 },
-	    { "id": 9, "startTime": 280, "endTime": 430 }
+	    { "id": 1, "startTime": 30, "endTime": 150, "bus_id": 1 },
+	    { "id": 2, "startTime": 180, "endTime": 300, "bus_id": 2 },
+	    { "id": 3, "startTime": 330, "endTime": 450, "bus_id": 3 },
+	    { "id": 4, "startTime": 40, "endTime": 130, "bus_id": 4 },
+	    { "id": 5, "startTime": 160, "endTime": 250, "bus_id": 5 },
+	    { "id": 6, "startTime": 280, "endTime": 370, "bus_id": 6 },
+	    { "id": 7, "startTime": 400, "endTime": 490, "bus_id": 7 },
+	    { "id": 8, "startTime": 80, "endTime": 240, "bus_id": 8 },
+	    { "id": 9, "startTime": 280, "endTime": 430, "bus_id": 9 }
 		],
 	"buses": 
 		[
-			{ "id": 1, "name": "Bus 1", "trip_ids": [1] },
-			{ "id": 2, "name": "Bus 2", "trip_ids": [2] },
-			{ "id": 3, "name": "Bus 3", "trip_ids": [3] },
-			{ "id": 4, "name": "Bus 4", "trip_ids": [4] },
-			{ "id": 5, "name": "Bus 5", "trip_ids": [5] },
-			{ "id": 6, "name": "Bus 6", "trip_ids": [6] },
-			{ "id": 7, "name": "Bus 7", "trip_ids": [7] },
-			{ "id": 8, "name": "Bus 8", "trip_ids": [8] },
-			{ "id": 9, "name": "Bus 9", "trip_ids": [9] }
+			{ "id": 1, "name": "Bus 1" },
+			{ "id": 2, "name": "Bus 2" },
+			{ "id": 3, "name": "Bus 3" },
+			{ "id": 4, "name": "Bus 4" },
+			{ "id": 5, "name": "Bus 5" },
+			{ "id": 6, "name": "Bus 6" },
+			{ "id": 7, "name": "Bus 7" },
+			{ "id": 8, "name": "Bus 8" },
+			{ "id": 9, "name": "Bus 9" }
 		]
 }
 
